@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -81,6 +80,9 @@
                                 <state key="normal" title="=">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculatorAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNA-Yt-glN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeD-4E-4XK">
                                 <rect key="frame" x="8" y="699" width="74" height="70"/>
@@ -229,15 +231,21 @@
                                 <state key="normal" title="AC">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearCalculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7X-2S-gj7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="＝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coy-h6-bY2">
-                                <rect key="frame" x="8" y="119" width="189" height="30"/>
+                                <rect key="frame" x="8" y="119" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="sFd-a4-2Cp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答え用のラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-5m-3HG">
-                                <rect key="frame" x="217" y="119" width="189" height="30"/>
+                                <rect key="frame" x="68" y="119" width="338" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -339,7 +347,6 @@
                             <constraint firstItem="4wz-Z3-4AS" firstAttribute="centerY" secondItem="3ug-Zt-Nnv" secondAttribute="centerY" id="vRj-VX-n16"/>
                             <constraint firstItem="vpg-En-Rvc" firstAttribute="leading" secondItem="zEm-qx-tJc" secondAttribute="trailing" constant="8" id="wS3-Tw-W4U"/>
                             <constraint firstItem="BDH-RG-Fj3" firstAttribute="leading" secondItem="1BC-iw-y2i" secondAttribute="trailing" constant="8" id="xoi-Hb-Eb4"/>
-                            <constraint firstItem="bb6-5m-3HG" firstAttribute="width" secondItem="coy-h6-bY2" secondAttribute="width" id="yeD-ds-Bq2"/>
                             <constraint firstItem="jfs-Kj-2CN" firstAttribute="leading" secondItem="Vyh-Yn-x5c" secondAttribute="trailing" constant="8" id="yoN-Zp-lzG"/>
                             <constraint firstItem="zEm-qx-tJc" firstAttribute="leading" secondItem="PRv-1M-GUV" secondAttribute="trailing" constant="8" id="z6J-fc-OVL"/>
                             <constraint firstItem="coy-h6-bY2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="zCx-8M-r7R"/>
@@ -353,6 +360,7 @@
                         <outlet property="formulaLabel" destination="jJu-60-4DU" id="FO6-Qy-OK1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </scene>

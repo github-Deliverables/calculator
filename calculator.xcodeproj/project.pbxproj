@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2851358AB043D4DBA757EE22 /* Pods_calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF71377B124E6F24BA60DE7B /* Pods_calculator.framework */; };
 		2CDEE98B23CD55D900945977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEE98A23CD55D900945977 /* AppDelegate.swift */; };
 		2CDEE98D23CD55D900945977 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEE98C23CD55D900945977 /* SceneDelegate.swift */; };
 		2CDEE98F23CD55D900945977 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEE98E23CD55D900945977 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		2CDEE99323CD55DF00945977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CDEE99623CD55DF00945977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CDEE99823CD55DF00945977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B97E235E4C210F6B64D66EEC /* Pods-calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator.debug.xcconfig"; path = "Target Support Files/Pods-calculator/Pods-calculator.debug.xcconfig"; sourceTree = "<group>"; };
+		D9CA08A330B047718C6B9ED6 /* Pods-calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator.release.xcconfig"; path = "Target Support Files/Pods-calculator/Pods-calculator.release.xcconfig"; sourceTree = "<group>"; };
+		EF71377B124E6F24BA60DE7B /* Pods_calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2851358AB043D4DBA757EE22 /* Pods_calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BA937DA72A2035C37206772 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF71377B124E6F24BA60DE7B /* Pods_calculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CDEE97E23CD55D900945977 = {
 			isa = PBXGroup;
 			children = (
 				2CDEE98923CD55D900945977 /* calculator */,
 				2CDEE98823CD55D900945977 /* Products */,
+				97D0C6C5E1369757D5046C0B /* Pods */,
+				1BA937DA72A2035C37206772 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = calculator;
 			sourceTree = "<group>";
 		};
+		97D0C6C5E1369757D5046C0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B97E235E4C210F6B64D66EEC /* Pods-calculator.debug.xcconfig */,
+				D9CA08A330B047718C6B9ED6 /* Pods-calculator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CDEE99B23CD55DF00945977 /* Build configuration list for PBXNativeTarget "calculator" */;
 			buildPhases = (
+				5A616C43F5B7CDDBB5BD55BF /* [CP] Check Pods Manifest.lock */,
 				2CDEE98323CD55D900945977 /* Sources */,
 				2CDEE98423CD55D900945977 /* Frameworks */,
 				2CDEE98523CD55D900945977 /* Resources */,
+				F8671C809C3916A606A9CCDC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A616C43F5B7CDDBB5BD55BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-calculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8671C809C3916A606A9CCDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-calculator/Pods-calculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-calculator/Pods-calculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-calculator/Pods-calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CDEE98323CD55D900945977 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		2CDEE99C23CD55DF00945977 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B97E235E4C210F6B64D66EEC /* Pods-calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		2CDEE99D23CD55DF00945977 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9CA08A330B047718C6B9ED6 /* Pods-calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
