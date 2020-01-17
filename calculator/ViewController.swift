@@ -39,19 +39,32 @@ class ViewController: UIViewController {
            {
             return;
             }
-            if(formulaText=="0"&&(!(senderedText=="0"))){
-                if(senderedText=="." || senderedText=="+" || senderedText=="-" || senderedText=="÷" || senderedText=="×")
+            if (formulaText == "0")
+            {
+                let operators = ["+","-","×","÷","."]
+                for ope in operators
                 {
-                    formulaLabel.text = formulaText + senderedText
-                    return
+                    if senderedText == ope {
+                        formulaLabel.text = formulaText + senderedText
+                        return
+                    }
                 }
-                else {
-                    formulaLabel.text =  senderedText
-                    return
-                }
-                
-                
+                formulaLabel.text =  senderedText
+                return
             }
+//            if(formulaText=="0"&&(!(senderedText=="0"))){
+//                if(senderedText=="." || senderedText=="+" || senderedText=="-" || senderedText=="÷" || senderedText=="×")
+//                {
+//                    formulaLabel.text = formulaText + senderedText
+//                    return
+//                }
+//                else {
+//                    formulaLabel.text =  senderedText
+//                    return
+//                }
+                
+                
+//            }
             formulaLabel.text = formulaText + senderedText
 
         }
@@ -67,12 +80,20 @@ class ViewController: UIViewController {
                let formula: String = formatFormula(formulaText)
                answerLabel.text = evalFormula(formula)
     }
-    @IBAction func clearCalculation(_ sender: UIButton) {
+    @IBAction func allclearCalculation(_ sender: UIButton) {
         // ACボタンが押されたら式と答えをクリアする
                formulaLabel.text = ""
                answerLabel.text = ""
     }
     
+    @IBAction func clearCalculation(_ sender: UIButton) {
+        guard let formulaText = formulaLabel.text else {
+            return
+        }
+        var clear = formulaText
+        clear.removeLast()
+        formulaLabel.text = clear
+    }
     
     private func formatFormula(_ formula: String) -> String {
         // 入力された整数には`.0`を追加して小数として評価する
