@@ -28,8 +28,36 @@ class ViewController: UIViewController {
             guard let senderedText = sender.titleLabel?.text else {
                 return
             }
-            formulaLabel.text = formulaText + senderedText
+
+        if formulaText == "" && senderedText == "0" {
+            
+            formulaLabel.text = senderedText
         }
+
+        else {
+            if(formulaText=="0"&&senderedText=="0")
+           {
+            return;
+            }
+            if(formulaText=="0"&&(!(senderedText=="0"))){
+                if(senderedText=="." || senderedText=="+" || senderedText=="-" || senderedText=="÷" || senderedText=="×")
+                {
+                    formulaLabel.text = formulaText + senderedText
+                    return
+                }
+                else {
+                    formulaLabel.text =  senderedText
+                    return
+                }
+                
+                
+            }
+            formulaLabel.text = formulaText + senderedText
+
+        }
+        
+    }
+    
     
     @IBAction func calculatorAnswer(_ sender: UIButton) {
         // =ボタンが押されたら答えを計算して表示する
@@ -44,6 +72,8 @@ class ViewController: UIViewController {
                formulaLabel.text = ""
                answerLabel.text = ""
     }
+    
+    
     private func formatFormula(_ formula: String) -> String {
         // 入力された整数には`.0`を追加して小数として評価する
         // また`÷`を`/`に、`×`を`*`に置換する
